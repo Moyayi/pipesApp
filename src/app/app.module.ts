@@ -1,12 +1,19 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { AppRouterModule } from './app-router.module';
 import { AppComponent } from './app.component';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
 import { SharedModule } from './shared/shared.module';
 import { VentasModule } from './ventas/ventas.module';
 
+import localeES from '@angular/common/locales/es'
+import localeFr from '@angular/common/locales/fr'
 
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData( localeES )
+registerLocaleData( localeFr )
 
 @NgModule({
   declarations: [
@@ -15,12 +22,15 @@ import { VentasModule } from './ventas/ventas.module';
   imports: [
     AppRouterModule,
     BrowserModule,
+    BrowserAnimationsModule,
     PrimeNgModule,
     SharedModule,
     VentasModule
     
   ],
-  providers: [],
+  providers: [
+    {provide : LOCALE_ID, useValue : 'es'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
