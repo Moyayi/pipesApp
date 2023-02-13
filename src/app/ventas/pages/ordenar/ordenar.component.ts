@@ -9,6 +9,7 @@ import { Color, Heroe } from '../../interfaces/ventas.interface';
 export class OrdenarComponent {
 
   buttonMayus : boolean = false;
+  order : boolean = false;
   ordenarPor = ""
   heroe : Heroe [] = [
     {
@@ -42,7 +43,12 @@ export class OrdenarComponent {
     this.buttonMayus = !this.buttonMayus;
   }
 
-  toggleBusqueda( valor : string ){
-    this.ordenarPor = valor;
+  toggleBusqueda( ordenar : string ){
+    if ( this.ordenarPor === ordenar)  { 
+      this.order = !this.order;
+    }else { 
+      this.order = false;
+      this.ordenarPor = ordenar;
+    }
   }
 }

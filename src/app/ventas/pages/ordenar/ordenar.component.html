@@ -75,7 +75,7 @@
 </div>
 <div class="col-8 mx-auto grid rounded">
     <div class="col">
-        <p-table [value]="heroe | ordenar:ordenarPor">
+        <p-table [value]="heroe | ordenar:ordenarPor:order">
             <ng-template pTemplate="header">
                 <tr>
                     <th>Nombre</th>
