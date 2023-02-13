@@ -43,8 +43,5 @@ export class OrdenarPipe implements PipeTransform {
           )
         return heroes;
     }
-    
-
   }
-
 }
